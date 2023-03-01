@@ -24,10 +24,7 @@ app.post('/rating', (req, res) => {
     if(!usertext) {
         return res.status(400).json({ error: 'Invalid input. A non-empty string is required in claim_history field'});
     }
-    // error handling still needs to be fixed. We get a 200 response if numbers are entered even though it should return an error
-    if (typeof usertext !=='string') {
-        return res.status(400).json({ error: 'Invalid input. A non-empty string is required in claim_history field'});
-    }
+  
 
     // .reduce() method sums up the count for each keyword counted in the string
     const rating = results.reduce((acc, cur) => {

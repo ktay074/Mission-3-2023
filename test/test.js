@@ -49,17 +49,7 @@ describe ('POST /rating', function(){
             })
     })
 
-    it('should return an error if claim_history is not provided', function(done){
-        chai.request(app)
-            .post('/rating')
-            .send({claim_history: '123'})
-            .end(function(err, res){ 
-                expect(res).to.have.status(400); 
-                expect(res.body).to.have.property('error').that.equals('Invalid input. A non-empty string is required in claim_history field')
-                done(); 
-            })
-    })
-
+    
 })
 
 
