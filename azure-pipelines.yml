@@ -18,6 +18,7 @@ steps:
 
 - script: |
     npm install
+    npm install --save-dev mocha 
     npm test
 - task: PublishTestResults@2
   inputs:
