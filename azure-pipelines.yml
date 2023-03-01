@@ -18,8 +18,8 @@ steps:
 
 - script: |
     npm install
-    npm run build
-    npm run mocha
+    npm build
+    npm test
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
