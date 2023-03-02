@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "build": "echo 'build script executed'"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
