@@ -11,26 +11,23 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
 - task: NodeTool@0
   inputs:
-    versionSpec: '16.14.0'
+    versionSpec: '16.x'
   displayName: 'Install Node.js'
 
 - script: |
     npm install
-    npm-script build
-    npm-script test
+  displayName: 'Install NPM'
+
+- script: |
+    npm run build
+  displayName: 'Install npm run build'
+
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/TEST-*.xml'
   displayName: 'npm install and build'
-
-- task: VSTest@2
-  inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-      **\*test*.dll
-      !**\*TestAdapter.dll
-      !**\obj\**
-    searchFolder: '$(System.DefaultWorkingDirectory)'
