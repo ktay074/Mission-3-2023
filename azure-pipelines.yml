@@ -30,10 +30,9 @@ stages:
       vmImage: $(vmImageName)
 
     steps:
-    - task: NodeTool@0
+    - task: NodeAndNpmTool@1
       inputs:
-        versionSpec: '10.x'
-      displayName: 'Install Node.js'
+        versionSpec: '16.x'
 
     - script: |
         npm install
