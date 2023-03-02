@@ -19,11 +19,7 @@ steps:
 
 - script: |
     npm install
-  displayName: 'Install NPM'
-
-- script: |
     npm run build
-  displayName: 'Install npm run build'
 
 
 - task: PublishTestResults@2
